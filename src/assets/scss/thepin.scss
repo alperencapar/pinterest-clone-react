@@ -1,0 +1,489 @@
+$max-width: 1016px;
+$icon-color: #767676;
+$icon-hover-background-color: rgba(0, 0, 0, 0.06);
+$global-text-color: #111111;
+$pinterest-red: #e60023;
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    color: $global-text-color;
+}
+
+a {
+    text-decoration: none;
+    padding: 16px;
+    border-radius: 50%;
+    font-weight: 700;
+
+    &:hover {
+        background-color: $icon-hover-background-color;
+    }
+}
+
+section {
+    width: 100%;
+    height: 100%;
+    // background-color: #e1e1e1;
+    position: relative;
+}
+
+.the-pin-page {
+    padding-block: 2rem;
+    .pin-page-container {
+        display: flex;
+        justify-content: center;
+
+        .pin-page-outer-wrappper {
+            max-width: $max-width;
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            .pin-page-inner-wrapper {
+                width: 100%;
+                height: 100%;
+
+                .pin-wrapper {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 32px;
+                    overflow: hidden;
+                    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.3);
+
+                    .pin-card {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: row;
+
+                        .pin-photo-container {
+                            //max-width: 508px;
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+
+                        //PIN TEXT SECTION(RIGHT SECTION)
+                        .pin-text-container {
+                            //max-width: 508px;
+                            width: 100%;
+                            height: 100%;
+
+                            .pin-text-wrapper {
+                                width: 100%;
+                                height: 100%;
+                                display: flex;
+                                align-items: flex-start;
+                                flex-direction: column;
+                                padding-inline: 2rem;
+
+                                //PIN INFO TEXTSalign-content
+                                .info-wrapper {
+                                    width: 100%;
+                                    height: 100%;
+                                    padding-block: 1rem;
+
+                                    .site-link {
+                                        padding-block: 1rem;
+                                        a {
+                                            color: $global-text-color;
+                                            background: none;
+                                            font-weight: 400;
+                                        }
+                                    }
+
+                                    .pin-header {
+                                        width: 100%;
+                                        height: 100%;
+                                        padding-block: 1rem;
+                                        font-size: 1.4em;
+                                    }
+
+                                    //PIN OWNER INFO
+                                    .pin-owner-wrapper {
+                                        width: 100%;
+                                        height: 100%;
+                                        display: flex;
+                                        padding-top: 2rem;
+                                        align-items: center;
+
+                                        .pin-owner-profile-pic {
+                                            // width: 30px;
+                                            // height: 30px;
+
+                                            i {
+                                                // width: 100%;
+                                                // height: 100%;
+                                                font-size: 4em;
+                                            }
+                                        }
+
+                                        .pin-owner-infos {
+                                            align-self: center;
+                                            padding-left: 1rem;
+                                            flex: 1;
+
+                                            .pin-owner-name {
+                                                font-size: 1.1em;
+                                                font-weight: 700;
+                                            }
+
+                                            .pin-owner-followwer-count {
+                                                font-weight: 400;
+                                                font-size: 0.8em;
+                                            }
+                                        }
+
+                                        .pin-owner-follow-button {
+                                            align-self: center;
+                                            a {
+                                                text-decoration: none;
+                                                font-weight: 600;
+                                                // font-size: 1.2em;
+                                                background-color: $icon-hover-background-color;
+                                                padding: 12px 24px;
+                                                border-radius: 24px;
+                                                &:hover {
+                                                    background-color: $icon-color;
+                                                    color: #fff;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            } // pin-text-container -> pin-text-wrapper
+
+
+
+                            //Comment Heading
+                            .comment-heading-section {
+                                width: 100%;
+                                height: 100%;
+                                padding-bottom: 2em;
+
+                                .comment-heading-section-wrapper {
+                                    display: flex;
+                                    // font-size: 1.2em;
+                                    font-weight: 700;
+
+                                    .comment-toggle-btn {
+                                        padding-left: 5px;
+                                        a {
+                                            text-decoration: none;
+                                            color: $icon-color;
+                                            padding: 8px 12px;
+                                            border-radius: 50%;
+                                            font-weight: 900;
+
+                                            &:hover {
+                                                background-color: $icon-hover-background-color;
+                                                //color: #fff;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .comment-add {
+                                width: 100%;
+                                height: 100%;
+                                padding-bottom: 2rem;
+
+                                .comment-add-wrapper {
+                                    display: flex;
+                                    flex: 1;
+                                    justify-content: center;
+                                    align-items: center;
+
+                                    .comment-add-profile-pic-wrapper {
+                                        width: 100%;
+                                        height: 100%;
+                                        i {
+                                            font-size: 3.5em;
+                                        }
+                                    }
+
+                                    .comment-add-input {
+                                        width: 100%;
+                                        height: 100%;
+                                        position: relative;
+                                        padding-left: 12px;
+                                        //flex:1;
+                                        .comment-add-input-wrapper {
+                                            position: relative;
+                                            height: auto;
+                                            width: 100%;
+
+                                            .comment-add-input-box {
+                                                width: 100%;
+                                                height: 100%;
+                                                textarea {
+                                                    border: 1px solid
+                                                        rgba(0, 0, 0, 0.2);
+                                                    border-radius: 16px;
+                                                    padding: 12px;
+                                                    outline: none;
+                                                    font-size: 1.2em;
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    resize: vertical;
+                                                    display: block;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .comments-and-comment-add-section {
+                                width: 100%;
+                                height: 100%;
+
+                                .single-comment-container {
+                                    display: flex;
+                                    padding-bottom: 1rem;
+
+                                    .comment-content-container {
+                                        border: 1px solid rgba(0, 0, 0, 0.2);
+                                        border-radius: 16px;
+
+                                        /////////////////////////////
+                                        .comment-owner-name-and-time {
+                                            display: flex;
+                                            align-content: flex-start;
+                                            // font-size: 1em;
+                                            padding-bottom: 2px;
+
+                                            .comment-owner-name {
+                                                font-weight: 700;
+                                                // font-size: 1.2em;
+                                            }
+                                            .comment-time {
+                                                padding-left: 8px;
+                                                align-self: center;
+                                                color: $icon-hover-background-color;
+                                            }
+                                        }
+                                    }
+
+                                    .padding-div {
+                                        padding: 12px 16px;
+                                    }
+
+                                    .comment-body{
+                                        font-size: 0.8em;
+                                    }
+
+
+                                }
+
+                                .comment-profile-container {
+                                    align-self: flex-start;
+                                }
+
+                                .comment-add-container {
+                                    width: 100%;
+                                    height: 100%;
+
+                                    .comment-add-section-wrapper {
+                                        display: flex;
+                                        width: 100%;
+                                        height: 100%;
+                                        justify-content: center;
+                                        align-items: center;
+
+                                        .comment-profile-container {
+                                            align-self: flex-start;
+                                            justify-self: flex-start;
+                                        }
+
+                                        .comment-add-body-container {
+                                            width: 100%;
+                                            height: 100%;
+                                            display: flex;
+
+                                            .input-outer-container {
+                                                width: 100%;
+                                                height: 100%;
+                                                align-self: center;
+
+                                                textarea {
+                                                    outline: none;
+                                                    border: none;
+                                                    background: none;
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    border-radius: 24px;
+                                                    border: 1px solid
+                                                        rgba(0, 0, 0, 0.2);
+
+                                                    padding: 8px 12px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .comment-profile {
+                                    font-size: 4em;
+                                    padding-right: 12px;
+                                }
+                            }
+
+
+
+
+                            .actions-wrapper {
+                                width: 100%;
+                                height: 100%;
+                                padding-top: 16px;
+
+                                .action-buttons {
+                                    display: flex;
+                                    width: 100%;
+                                    align-items: center;
+                                    // font-size: 1.2em;
+                                    padding: 8px;
+                                    flex: 1;
+
+                                    .action-btn-menulist-btn {
+                                        position: relative;
+                                        display: flex;
+
+                                        .action-menulist {
+                                            display: none;
+                                            display: flex;
+                                            flex-direction: column;
+                                            position: absolute;
+                                            top: 50%;
+                                            left: 50%;
+                                            transform: translate(-50%, 0);
+                                            background-color: #fff;
+                                            padding: 8px 12px;
+                                            box-shadow: 0px 1px 8px
+                                                rgba(0, 0, 0, 0.3);
+                                            border-radius: 24px;
+                                            margin-top: 30px;
+
+                                            a {
+                                                border-radius: none;
+                                                background: inherit;
+                                                padding: 0;
+                                            }
+
+                                            .action-btn-holder {
+                                                display: flex;
+                                                align-items: center;
+                                                padding: 12px 16px;
+                                                min-width: 180px;
+                                                max-width: 300px;
+                                                width: 100%;
+                                                height: 100%;
+                                                border-radius: 12px;
+
+                                                .action-menu-item-icon {
+                                                    color: inherit;
+                                                    width: 24px;
+                                                    height: auto;
+                                                }
+
+                                                .action-menu-item-text {
+                                                    padding-left: 8px;
+                                                    color: inherit;
+                                                    font-weight: 700;
+                                                    width: 100%;
+                                                }
+
+                                                &:hover {
+                                                    background-color: rgba(0,0,0,0.1);
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .action-pins-wrapper {
+                                        width: 100%;
+                                        height: 100%;
+                                        position: relative;
+                                        display: flex;
+                                        justify-content: flex-end;
+
+                                        .action-pins-selectbox {
+                                            display: flex;
+                                            justify-content: flex-end;
+                                            align-items: center;
+
+                                            .pin-select {
+                                                position: relative;
+                                                width: 60%;
+                                                display: flex;
+                                                align-items: center;
+
+                                                #select {
+                                                    border: none;
+                                                    outline: none;
+                                                    appearance: none;
+                                                    font-weight: 700;
+                                                    font-size: 1rem;
+                                                    width: 100%;
+                                                    position: relative;
+                                                    background: white;
+                                                    cursor: pointer;
+
+                                                    option {
+                                                        font-weight: 600;
+                                                    }
+                                                }
+
+                                                &:before {
+                                                    content: "";
+                                                    position: absolute;
+                                                    width: 0;
+                                                    height: 0;
+                                                    right: -20px;
+                                                    top: 12px;
+                                                    border: 8px solid pink;
+                                                    border-color: pink
+                                                        transparent transparent
+                                                        transparent;
+                                                    z-index: 100;
+                                                    transform: translate(
+                                                        0,
+                                                        -50%
+                                                    );
+                                                    pointer-events: none;
+                                                }
+                                            }
+                                        }
+
+                                        .action-pin-save-btn {
+                                            padding-left: 30px;
+
+                                            a {
+                                                padding: 12px 16px;
+                                                border-radius: 24px;
+                                                background-color: $pinterest-red;
+                                                color: #fff;
+
+                                                &:hover {
+                                                    opacity: 0.9;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        } //pin-text-container end
+                    }
+                }
+            }
+        }
+    }
+}

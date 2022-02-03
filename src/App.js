@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+/* eslint-disable no-unused-vars */
 import './App.css';
+import Navbar from './components/Navbar'
+import Pins from './components/Pins'
+import ThePin from './components/ThePin';
+import useFetch from './useFetch';
+
+
+
 
 function App() {
+  const { data, loading, error } = useFetch("https://picsum.photos/v2/list")
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      
+      {data && <Pins pins={data} loading={loading} />}
+      
+      {/* <ThePin /> */}
     </div>
   );
 }

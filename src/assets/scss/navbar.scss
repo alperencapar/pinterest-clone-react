@@ -1,0 +1,130 @@
+$icon-color: #767676;
+$icon-hover-background-color: rgba(0, 0, 0, 0.06);
+
+$navbar-text-color: #211922;
+
+$input-background-color: #efefef;
+$input-hover-background-color: #e1e1e1;
+
+$main-page-button-background: #111111;
+
+$global-text-color: #111111;
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    background-color: #fff;
+    height: calc(80px);
+    width: 100%;
+    @include flex-center;
+    font-size: 16px;
+
+    /*logo*/
+    .logo-container {
+        width: 48px;
+        height: 48px;
+
+        .logo-wrapper {
+            width: 100%;
+            height: 100%;
+            @include flex-center;
+
+            img {
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    ul {
+        @include flex-center;
+        list-style-type: none;
+        flex: 1;
+        color: $navbar-text-color;
+
+        li {
+            padding-inline: 4px;
+
+            a {
+                &:nth-child(1) {
+                    font-weight: 700;
+                }
+            }
+
+            /*input length*/
+            &:nth-child(2) {
+                flex: 12;
+            }
+
+            /*input box*/
+            .search-container {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                border-radius: 20px;
+                overflow: hidden;
+                background-color: $input-background-color;
+                &:hover {
+                    background-color: $input-hover-background-color;
+                }
+
+                .search-wrapper {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    background-color: inherit;
+                    left: 12px;
+                    @include flex-center;
+
+                    .search-front {
+                        position: relative;
+                        color: $icon-color;
+                        // top: 50%;
+                        //left: 1.7%;
+                        // transform: translate(0, -50%);
+                    }
+
+                    input {
+                        width: 100%;
+                        height: 100%;
+                        background-color: inherit;
+                        font-size: 16px;
+                        padding-block: 12px;
+                        border: none;
+                        outline: none;
+                        padding-left: 8px;
+                    }
+                }
+            }
+        }
+    }
+
+    ul li > .active {
+        background-color: $main-page-button-background !important;
+        color: #fff !important;
+        //hover and active not fixed yet
+        // TODO: fix hover and active
+
+        &:hover,
+        &:active {
+            background-color: $main-page-button-background;
+        }
+    }
+
+    a {
+        @include flex-center;
+        text-decoration: none;
+        color: $icon-color;
+        padding: 12px;
+        border-radius: 24px;
+
+        &:hover {
+            background-color: $icon-hover-background-color;
+        }
+    }
+}
