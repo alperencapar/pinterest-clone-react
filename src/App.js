@@ -1,25 +1,21 @@
-/* eslint-disable no-unused-vars */
-import './App.css';
-import Navbar from './components/Navbar'
-import Pins from './components/Pins'
-import ThePin from './components/ThePin';
-import useFetch from './useFetch';
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Pins from "./components/Pins";
+import ThePin from "./components/ThePin";
 
-
-
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
-  const { data, loading, error } = useFetch("https://picsum.photos/v2/list")
-
-  return (
-    <div className="App">
-      <Navbar />
-      
-      {data && <Pins pins={data} loading={loading} />}
-      
-      {/* <ThePin /> */}
-    </div>
-  );
+    return (
+        <Router>
+            <div className="App">
+                <Navbar />
+                <Routes>
+                    <Route path="/" element={<Pins />} />
+                    <Route path="/pin/:pinId" element={<ThePin />} />
+                </Routes>
+            </div>
+        </Router>
+    );
 }
 
 export default App;

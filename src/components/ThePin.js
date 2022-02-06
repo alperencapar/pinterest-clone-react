@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 import {
     FaEllipsisH,
     FaTrashAlt,
@@ -10,8 +11,10 @@ import {
 } from "react-icons/fa";
 
 import "../assets/scss/thepin.scss";
+import useFetch from "../useFetch";
 
 const ThePin = () => {
+    let params = useParams();
     const [showActions, setShowActions] = useState(false);
     const [showComments, setShowComments] = useState(true);
 
@@ -29,6 +32,9 @@ const ThePin = () => {
         setShowComments(!showComments);
     };
 
+    const { data } = useFetch(`https://picsum.photos/id/${params.pinId}/info`);
+    console.log(data);
+
     return (
         <section className="the-pin-page">
             <div className="pin-page-container">
@@ -37,10 +43,7 @@ const ThePin = () => {
                         <div className="pin-wrapper">
                             <div className="pin-card">
                                 <div className="pin-photo-container">
-                                    <img
-                                        src="https://i.pinimg.com/564x/e5/34/1d/e5341dfa4764f72b9325057c572b64cd.jpg"
-                                        alt=""
-                                    />
+                                    <img src={data?.download_url} alt="" />
                                 </div>
 
                                 <div className="pin-text-container">
@@ -120,20 +123,6 @@ const ThePin = () => {
                                                                 <option value="1">
                                                                     GYM Beauty
                                                                 </option>
-                                                                <option value="2">
-                                                                    Gaming Room
-                                                                </option>
-                                                                <option value="3">
-                                                                    Vanlife
-                                                                </option>
-                                                                <option value="4">
-                                                                    Home Ideas
-                                                                </option>
-                                                                <option value="4">
-                                                                    Vanlife but
-                                                                    caravan
-                                                                    ideas
-                                                                </option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -171,7 +160,7 @@ const ThePin = () => {
                                                 </div>
                                                 <div className="pin-owner-infos">
                                                     <div className="pin-owner-name">
-                                                        Alperen Çapar
+                                                        {data?.author}
                                                     </div>
                                                     <div className="pin-owner-followwer-count">
                                                         118 Takipçi

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const Input = ({ type, placeholder }) => {
-const [value, setValue] = useState("")
+    const [value, setValue] = useState("");
     return (
         <>
             <input
